@@ -1,7 +1,11 @@
 import {
   Body,
   Controller,
+  Get,
   HttpStatus,
+  NotFoundException,
+  Param,
+  ParseIntPipe,
   Post,
   Res,
   Version,
@@ -37,6 +41,19 @@ export class UsersController {
         message: 'Failed to create gift',
         error: error.message,
       });
+    }
+  }
+
+  @Get(':id')
+  @Version('1')
+  @ApiOperation({ summary: 'Get user by ID' })
+  @ApiResponse({ status: 200, description: 'Returns the user details' })
+  @ApiResponse({ status: 404, description: 'User not found' })
+  async findOne(@Param('id', ParseIntPipe) id: number) {
+    try {
+      return await this.userService.findOne(id);
+    } catch (error) {
+      throw new NotFoundException('User not found');
     }
   }
 }

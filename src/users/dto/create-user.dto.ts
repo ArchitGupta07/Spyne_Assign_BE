@@ -17,8 +17,8 @@ export class CreateUserDto {
   @ApiProperty({ description: 'Password Entered By the User' })
   password: string;
 
-  @IsOptional()
-  @IsString()
-  @ApiProperty({ description: 'profile Pic of the user' })
-  profilePic: string;
+  //   @IsOptional()
+  //   @IsString()
+  //   @ApiProperty({ description: 'profile Pic of the user' })
+  //   profilePic: string;
 }
