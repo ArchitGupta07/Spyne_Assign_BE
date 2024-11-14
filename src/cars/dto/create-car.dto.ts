@@ -22,12 +22,12 @@ export class CreateCarDto {
   @IsNotEmpty()
   description: string;
 
-  @ApiPropertyOptional({
-    description: 'Array of image URLs or paths for the car',
-  })
-  @IsArray()
-  @IsOptional()
-  images?: string[];
+  //   @ApiPropertyOptional({
+  //     description: 'Array of image URLs or paths for the car',
+  //   })
+  //   @IsArray()
+  //   @IsOptional()
+  //   images?: string[];
 
   @ApiProperty({
     description: 'The type of the car',
@@ -63,4 +63,11 @@ export class CreateCarDto {
   @IsInt()
   @IsNotEmpty()
   userId: number;
+
+  //   @ApiPropertyOptional({
+  //     description: 'Array of image URLs or paths for the car',
+  //   })
+  //   @IsArray()
+  //   @IsOptional()
+  //   images?: string[];
 }
